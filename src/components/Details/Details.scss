@@ -1,0 +1,32 @@
+.myblog-filtered {
+  width: 60%;
+  margin: 30px auto;
+  padding: 15px 70px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    color: rgb(248, 95, 120);
+  }
+  p:nth-child(1) {
+    color: rgb(248, 95, 120);
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  p:nth-child(2) {
+    font-size: 20px;
+    color: grey;
+    margin-top: 20px;
+  }
+  p {
+    color: black;
+  }
+  h3 {
+    color: rgba(255, 0, 0, 0.813);
+    cursor: pointer;
+  }
+}

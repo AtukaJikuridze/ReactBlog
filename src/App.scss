@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+nav {
+  background-color: rgb(248, 95, 120);
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  align-items: center;
+  ul {
+    display: flex;
+    gap: 100px;
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 30px;
+        position: relative;
+      }
+      a::before {
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 2px;
+        background-color: #fff;
+        left: 0px;
+        bottom: -9px;
+        transition: 0.4s;
+      }
+      a:hover::before {
+        width: 100%;
+      }
+    }
+  }
+}
