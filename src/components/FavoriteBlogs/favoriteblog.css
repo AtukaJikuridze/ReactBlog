@@ -4,4 +4,38 @@
 .favorite-blog .myblog .see-details h3 {
   margin: 50px 0px 10px 0px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 824px) {
+  .favorite-blog {
+    padding: 30px;
+  }
+  .favorite-blog .myblog {
+    width: 100%;
+    padding: 30px 25px;
+    text-align: center;
+  }
+  .favorite-blog .myblog h1 {
+    margin: auto;
+    font-size: 30px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 590px) {
+  .favorite-blog {
+    padding: 30px;
+  }
+  .favorite-blog .myblog {
+    width: 100%;
+    padding: 30px 25px;
+    text-align: center;
+  }
+  .favorite-blog .myblog h1 {
+    margin: auto;
+    font-size: 22px;
+    width: 100%;
+  }
+  .favorite-blog .myblog p {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=FavoriteBlog.css.map */

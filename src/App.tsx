@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -7,8 +7,19 @@ import AddBlog from "./components/AddBlog/AddBlog";
 import Details from "./components/Details/Details";
 import FavoriteBlog from "./components/FavoriteBlogs/FavoriteBlog";
 import { GlobalBlogs } from "./GlobalBlogs";
+import { AiOutlineBars, AiOutlineClose } from "react-icons/ai";
 
 function App() {
+  const linkBtnCloseNav = () => {
+    document.querySelector("nav")?.classList.remove("mobilenav");
+  };
+  const toggleNav = () => {
+    setNavMenu((current) => !current);
+    navRef.current.classList.toggle("mobilenav");
+  };
+  const navRef = useRef<any>(null);
+  const [navMenu, setNavMenu] = useState<boolean>(false);
+
   // My Blog List => delete blogs
   const [myBlogList, setMyBlogList] = useState<Array<any>>([]);
   const [filterId, setFilterId] = useState<number>(0);
@@ -54,19 +65,33 @@ function App() {
   };
   return (
     <>
-      <nav>
+      <nav ref={navRef}>
+        {navMenu ? (
+          <AiOutlineClose onClick={toggleNav} />
+        ) : (
+          <AiOutlineBars onClick={toggleNav} />
+        )}
+        <h3>ReactBlog</h3>
         <ul>
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link onClick={linkBtnCloseNav} to={"/"}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to={"/myblogs"}>My Blogs</Link>
+            <Link onClick={linkBtnCloseNav} to={"/myblogs"}>
+              My Blogs
+            </Link>
           </li>
           <li>
-            <Link to={"/addblog"}>Add new blog</Link>
+            <Link onClick={linkBtnCloseNav} to={"/addblog"}>
+              Add new blog
+            </Link>
           </li>
           <li>
-            <Link to={"/favoriteblogs"}>Favorite Blogs</Link>
+            <Link onClick={linkBtnCloseNav} to={"/favoriteblogs"}>
+              Favorite Blogs
+            </Link>
           </li>
         </ul>
       </nav>
@@ -116,6 +141,7 @@ function App() {
               setFavorites={setFavorites}
               globalUsers={globalUsers}
               favorites={favorites}
+              setGlobalUsers={setGlobalUsers}
             />
           }
         />

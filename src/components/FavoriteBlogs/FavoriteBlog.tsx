@@ -5,9 +5,16 @@ interface FavoriteBlogProps {
   favorites: Array<[number]>;
   setFavorites: any;
   globalUsers: any[];
+  setGlobalUsers: any;
 }
+
 export default function FavoriteBlog(props: FavoriteBlogProps) {
+  console.log(props.globalUsers[0]);
   const removeFavorite = (removeId: any) => {
+    props.globalUsers[removeId - 1].favorited =
+      !props.globalUsers[removeId - 1].favorited;
+    props.setGlobalUsers([...props.globalUsers]);
+
     props.setFavorites(props.favorites.filter((e) => e !== removeId));
   };
   if (props.favorites.length === 0) {
@@ -16,7 +23,9 @@ export default function FavoriteBlog(props: FavoriteBlogProps) {
         <h1>You Dont Have Any Favorite Blog !</h1>
         <div>
           <h1>Here is Global Blogs : </h1>
-          <Link to={"/"}>Create Blog</Link>
+          <Link style={{ fontSize: "30px", marginTop: "0px" }} to={"/"}>
+            Home
+          </Link>
         </div>
       </div>
     );

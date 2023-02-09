@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./blog.css";
+import "./myblogs.css";
 import { Link } from "react-router-dom";
 
 export interface myBlogsProps {
@@ -20,5 +20,5 @@ export default function MyBlogs(props: myBlogsProps) {
       </div>
     );
   }
-  return <div>{props.blogsMap()}</div>;
+  return <div className="myblogs">{props.blogsMap()}</div>;
 }

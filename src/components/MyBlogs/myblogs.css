@@ -1,0 +1,144 @@
+.noblogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+.noblogs h1 {
+  color: rgb(248, 95, 120);
+}
+.noblogs div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.noblogs div a {
+  font-size: 23px;
+  text-decoration: none;
+  margin-top: 7px;
+}
+
+.myblog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 30px auto;
+  padding: 24px 70px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+.myblog h1 {
+  color: rgb(248, 95, 120);
+  width: 80%;
+}
+.myblog p:nth-child(2) {
+  font-size: 20px;
+  color: grey;
+  margin-top: 20px;
+}
+.myblog p {
+  color: black;
+}
+
+.see-details p {
+  color: rgb(248, 95, 120);
+  cursor: pointer;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.filtered-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .myblogs .myblog {
+    overflow-wrap: break-word;
+    display: block;
+    width: 80%;
+  }
+  .myblogs .myblog div:nth-child(1) {
+    margin: auto;
+    text-align: center;
+    width: 80% !important;
+  }
+  .myblogs .myblog div:nth-child(1) h1 {
+    margin: auto;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .myblogs {
+    padding: 50px;
+  }
+  .myblogs .myblog {
+    width: 100%;
+  }
+  .myblog-filtered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 10px !important;
+  }
+  .myblog-filtered div:nth-child(1) {
+    width: 100%;
+  }
+  .myblog-filtered .deleteblog {
+    margin: 30px 0px 20px 0px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .myblogs {
+    padding: 50px 25px;
+  }
+  .myblogs .myblog {
+    width: 100%;
+    padding: 10px;
+  }
+  .myblog-filtered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .myblog-filtered h1 {
+    font-size: 22px;
+  }
+  .myblog-filtered .deleteblog {
+    margin: 30px 0px 20px 0px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .noblogs {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+  }
+  .noblogs div {
+    flex-direction: column;
+    font-size: 14px;
+    text-align: center;
+    gap: 20px;
+  }
+  .myblogs .myblog h1 {
+    font-size: 18px;
+  }
+  .myblogs .myblog p {
+    font-size: 14px;
+  }
+  .filtered-main h1 {
+    font-size: 18px;
+  }
+  .filtered-main p {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=myblogs.css.map */

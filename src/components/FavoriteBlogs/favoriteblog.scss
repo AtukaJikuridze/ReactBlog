@@ -10,3 +10,38 @@
     }
   }
 }
+
+@media screen and (max-width: 824px) {
+  .favorite-blog {
+    padding: 30px;
+    .myblog {
+      width: 100%;
+      padding: 30px 25px;
+      text-align: center;
+      h1 {
+        margin: auto;
+        font-size: 30px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .favorite-blog {
+    padding: 30px;
+    .myblog {
+      width: 100%;
+      padding: 30px 25px;
+      text-align: center;
+      h1 {
+        margin: auto;
+        font-size: 22px;
+        width: 100%;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -5,6 +5,10 @@ nav {
   justify-content: center;
   padding: 30px;
   align-items: center;
+  svg,
+  h3 {
+    display: none;
+  }
   ul {
     display: flex;
     gap: 100px;
@@ -14,7 +18,7 @@ nav {
       a {
         text-decoration: none;
         color: #fff;
-        font-size: 30px;
+        font-size: 26px;
         position: relative;
       }
       a::before {
@@ -30,6 +34,60 @@ nav {
       a:hover::before {
         width: 100%;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  body {
+    padding-top: 70px;
+  }
+  nav {
+    left: 0px;
+    top: 0px;
+    position: fixed;
+    width: 100%;
+    ul {
+      gap: 50px;
+      li {
+        a {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  nav.mobilenav {
+    height: 300px;
+  }
+  nav {
+    text-align: center;
+    display: block;
+    transition: 0.6s;
+    overflow: hidden;
+
+    height: 50px;
+    h3 {
+      display: block;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      margin: -10px 0px 30px 0px;
+    }
+
+    ul {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+    svg {
+      display: block;
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      font-size: 25px;
+      color: #fff !important;
     }
   }
 }

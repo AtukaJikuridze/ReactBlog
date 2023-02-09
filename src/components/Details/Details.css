@@ -10,6 +10,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.myblog-filtered div:nth-child(1) {
+  overflow-wrap: break-word;
+  width: 77%;
+}
 .myblog-filtered h1 {
   color: rgb(248, 95, 120);
 }
