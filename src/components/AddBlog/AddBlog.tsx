@@ -12,9 +12,9 @@ export default function AddBlog(props: addBlogProps) {
   };
   const submit = () => {
     if (
-      titleValue.length > 5 &&
-      descriptionValue.length > 10 &&
-      publisher.length > 2
+      titleValue.length > 0 &&
+      descriptionValue.length > 0 &&
+      publisher.length > 0
     ) {
       props.setMyBlogList([
         ...props.myBlogList,
@@ -37,18 +37,18 @@ export default function AddBlog(props: addBlogProps) {
     <div className="addblog">
       <h1 className="addblogh1">Add Blog:</h1>
       <form onSubmit={(e) => e.preventDefault()}>
-        <label>Form Title :</label>
+        <label>Form Title : (min length: 1)</label>
         <input
           onChange={(e) => setStateValue(setTitleValue, e.target.value)}
           type="text"
         />
-        <label>Form Description :</label>
+        <label>Form Description : (min length: 1)</label>
 
         <textarea
           onChange={(e) => setStateValue(setDescriptionValue, e.target.value)}
         />
 
-        <label>Form Publisher :</label>
+        <label>Form Publisher : (min length: 1)</label>
         <input
           type="text"
           onChange={(e) => setStateValue(setPublisher, e.target.value)}

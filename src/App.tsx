@@ -5,10 +5,22 @@ import Home from "./components/Home/Home";
 import MyBlog from "./components/MyBlogs/MyBlogs";
 import AddBlog from "./components/AddBlog/AddBlog";
 import Details from "./components/Details/Details";
+import FavoriteBlog from "./components/FavoriteBlogs/FavoriteBlog";
+import { GlobalBlogs } from "./GlobalBlogs";
 
 function App() {
+  // My Blog List => delete blogs
   const [myBlogList, setMyBlogList] = useState<Array<any>>([]);
   const [filterId, setFilterId] = useState<number>(0);
+  // enf od my blog list
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Home Page => favorite-page
+  const [favorites, setFavorites] = useState<Array<any>>([]);
+  const [globalUsers, setGlobalUsers] = useState<Array<any>>(GlobalBlogs);
+  // end of Home Page => favorite-page
+
   const navigate = useNavigate();
   interface BlogsMapJSX {
     title: string;
@@ -53,11 +65,24 @@ function App() {
           <li>
             <Link to={"/addblog"}>Add new blog</Link>
           </li>
+          <li>
+            <Link to={"/favoriteblogs"}>Favorite Blogs</Link>
+          </li>
         </ul>
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              globalUsers={globalUsers}
+              setGlobalUsers={setGlobalUsers}
+              favorites={favorites}
+              setFavorites={setFavorites}
+            />
+          }
+        />
         <Route
           path="/details"
           element={
@@ -82,6 +107,16 @@ function App() {
           path="/addblog"
           element={
             <AddBlog myBlogList={myBlogList} setMyBlogList={setMyBlogList} />
+          }
+        />
+        <Route
+          path="/favoriteblogs"
+          element={
+            <FavoriteBlog
+              setFavorites={setFavorites}
+              globalUsers={globalUsers}
+              favorites={favorites}
+            />
           }
         />
       </Routes>

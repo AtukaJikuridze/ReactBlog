@@ -1,0 +1,7 @@
+.favorite-blog .myblog {
+  display: flex;
+}
+.favorite-blog .myblog .see-details h3 {
+  margin: 50px 0px 10px 0px;
+  cursor: pointer;
+}/*# sourceMappingURL=FavoriteBlog.css.map */
